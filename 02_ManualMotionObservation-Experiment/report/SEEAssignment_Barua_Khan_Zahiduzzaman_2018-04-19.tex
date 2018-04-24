@@ -1,0 +1,69 @@
+	\documentclass[10pt,a4paper]{article}
+	\usepackage[english]{babel}
+	\usepackage[utf8]{inputenc}
+	\usepackage{fancyhdr}
+	\usepackage{hyperref}
+	\usepackage{graphicx}
+	\usepackage{caption}
+	\usepackage{cite}
+
+	\pagestyle{fancy}
+	\fancyhf{}
+	\rhead{26-April-2018}
+	\lhead{Assignment 01}
+	\rfoot{Page \thepage}
+
+	\begin{document}
+	\begin{titlepage}
+	\centering
+
+		{\scshape\LARGE Scientific Experimentation and Evaluation\par}
+
+		{\scshape\Large Assignment: 02\par}
+
+		\vfill
+
+		\vfill
+		{\Large\itshape Anees Khan (9030423)
+			\\Debaraj Barua (9030412)\\
+			Md Zahiduzzaman (9030432)
+			\par}
+		\vfill
+
+		{\large 26-April-2018\par}
+	\end{titlepage}
+	\tableofcontents
+	\section{Relevant Aspects of Experiment}
+	\subsection{Design of Robot}
+		\begin{itemize}
+			\item The robot has been designed with three wheels.
+			\item Two of these are driving wheels and are connected to the motors, thus enabling a differential drive systems; and the third is a driven wheel.
+		\end{itemize}
+	\subsection{Measurement of Start and Stop Positions}
+		\begin{itemize}
+			\item Two pens will be fixed near the two driving wheels. The lines joining these two points will be in parallel to the driving axle (considering the axis between two driving wheels).
+			\item The axis formed between these two points will be used to mark the orientation of robot, with respect to the coordinate system defined (described below).
+			\item The starting position will be when this line lies on the x-axis of the coordinate system; the end position can be relatively measured.
+		\end{itemize}
+	\subsection{Parameters used to drive the robot}
+		\begin{itemize}
+			\item Constant angular and translational speed for a fixed time period to describe an arc to left.
+			\item Constant translational speed and no angular speed for a fixed time period to describe a straight line.
+			\item Constant angular and translational speed for a fixed time period to describe an arc to right.
+		\end{itemize}
+	\subsection{Program used to drive the robot}
+		\begin{itemize}
+			\item The Lego Mindstorms NXT 2.0 software, we create three binary files for the three run sequences.
+			\item 
+		\end{itemize}
+	\subsection{Expected Problems and Performance}
+		\begin{itemize}
+			\item Axis connecting the two pens might not be parallel to the wheel axle.
+			\item Start position of each run may not be exactly similar owing to inaccurate positioning of the robot, this will result in lower precision.
+			\item Pens may slip of move during the run, as such may not result in accurate positions, thus affecting the precision of our readings.
+			\item The constant angular and translational speeds that we assume, may be inaccurate. The actual speed may differ and thus our estimate from the time will be inaccurate.
+			\item The initial acceleration and final deceleration of the robot has not been considered in the experiments, resulting in low accuracy.
+			\item In addition of the two previous points, slippage in the wheels and motors will also affect the accuracy of readings.
+		\end{itemize}
+
+	\end{document}
