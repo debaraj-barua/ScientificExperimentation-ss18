@@ -1,0 +1,7 @@
+\begin{tabular}{lrrrrr}
+\toprule
+{} &  X\_L(cm) &  Y\_L(cm) &  X\_R(cm) &  Y\_R(cm) &  Angle(degrees) \\
+\midrule
+0 &        0 &        0 &      8.3 &        0 &              90 \\
+\bottomrule
+\end{tabular}

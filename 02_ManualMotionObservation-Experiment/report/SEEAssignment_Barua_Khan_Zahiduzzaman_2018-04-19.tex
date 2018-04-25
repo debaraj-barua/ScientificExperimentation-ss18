@@ -6,6 +6,10 @@
 	\usepackage{graphicx}
 	\usepackage{caption}
 	\usepackage{cite}
+	\usepackage{booktabs}
+	\usepackage{wrapfig}
+	\usepackage{float}
+	\restylefloat{table}
 
 	\pagestyle{fancy}
 	\fancyhf{}
@@ -39,6 +43,10 @@
 			\item The robot has been designed with three wheels.
 			\item Two of these are driving wheels and are connected to the motors, thus enabling a differential drive systems; and the third is a driven wheel.
 		\end{itemize}
+		\begin{figure}[h]
+			\caption{"Robot Design"}
+			\includegraphics[scale=0.1]{bot.jpg}
+		\end{figure}
 	\subsection{Measurement of Start and Stop Positions}
 		\begin{itemize}
 			\item Two pens will be fixed near the two driving wheels. The lines joining these two points will be in parallel to the driving axle (considering the axis between two driving wheels).
@@ -53,8 +61,27 @@
 		\end{itemize}
 	\subsection{Program used to drive the robot}
 		\begin{itemize}
-			\item The Lego Mindstorms NXT 2.0 software, we create three binary files for the three run sequences.
-			\item 
+			\item Using the Lego Mindstorms NXT 2.0 software, we created the scenarios for three run sequences.
+			\item Straight Line:
+				\begin{itemize}
+					\item Power: 50\%
+					\item Duration: 3 Seconds
+					\item Steering Angle: 0 degrees
+				\end{itemize}
+			\item Left Arc:
+				\begin{itemize}
+					\item Power: 50\%
+					\item Duration: 3 Seconds
+					\item Steering Angle: -45 degrees
+				\end{itemize}
+			\item Right Arc:
+				\begin{itemize}
+					\item Power: 50\%
+					\item Duration: 3 Seconds
+					\item Steering Angle: 45 degrees
+				\end{itemize}		
+			\item The power percentage to wheel rpm has been calculated on the basis of readings found in \cite{motorInternals}. It is observed that in the unloaded condition, 50\% power results to around 80 rpm
+			\item Diameter of wheels: 5.7 cm
 		\end{itemize}
 	\subsection{Expected Problems and Performance}
 		\begin{itemize}
@@ -64,6 +91,93 @@
 			\item The constant angular and translational speeds that we assume, may be inaccurate. The actual speed may differ and thus our estimate from the time will be inaccurate.
 			\item The initial acceleration and final deceleration of the robot has not been considered in the experiments, resulting in low accuracy.
 			\item In addition of the two previous points, slippage in the wheels and motors will also affect the accuracy of readings.
+			\item The driven wheel will also result in the bot to drift and also decrease the distance it reaches.
 		\end{itemize}
-
+	\section{Observations and Data}
+		\subsection{Readings}
+		\begin{table}[H]
+			\centering
+			\begin{tabular}{lrrrrr}
+				\toprule
+				{} &  X\_L(cm) &  Y\_L(cm) &  X\_R(cm) &  Y\_R(cm) &  Angle(degrees) \\
+				\midrule
+				0 &        0 &        0 &      8.3 &        0 &              90 \\
+				\bottomrule
+			\end{tabular}
+			\caption{Intial Position}
+		\end{table}
+		\begin{table}[H]
+			\centering
+			\input{straight}
+			\caption{Straight Line Position}
+		\end{table}
+		\begin{table}[H]
+			\centering
+			\input{leftArc}
+			\caption{Left Arc Position}
+		\end{table}
+		\begin{table}[H]
+			\centering
+			\input{rightArc}
+			\caption{Right Arc Position}
+		\end{table}
+		Detailed data is available in the file "Assignment01\_data.ods"
+	 \subsection{Visualization}
+		 \begin{figure}[H]
+		 	\caption{"Plot of the lines between two pens of robot in various runs"}
+		 	\includegraphics[scale=0.5]{line_plot.png}
+		 \end{figure}
+		 \begin{figure}[H]
+		 	\caption{"Scatter plot for center of robot in various runs"}
+		 	\includegraphics[scale=0.5]{scatter_plot.png}
+		 \end{figure}
+	 All the plots and code is available in the file "SEE\_Experiment01\_plots.ipynb"		
+	\section{Results}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\textwidth]{scatter_plot_st.png}
+				\caption{Scatter plot for centers of robot in Straight run}
+			\end{figure}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\textwidth]{scatter_plot_lt.png}
+				\caption{Scatter plot for centers of robot in Left Arc run}
+			\end{figure}
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.7\textwidth]{scatter_plot_rt.png}
+				\caption{Scatter plot for centers of robot in Right Arc run}
+			\end{figure}
+	\begin{itemize}
+		\item Straight Run:		
+			\begin{itemize}
+				\item Mean X value: 52.3 cm
+				\item Mean Y value: 4.4 cm
+				\item Mean Angular value: 88.7 degrees
+				\item Standard Deviation in X value: 1.0 cm
+				\item Standard Deviation in Y value: 0.1 cm
+				\item Standard Deviation in Angular value: 1.0 degrees
+				\item Accuracy: 73 \%
+			\end{itemize}
+		\item Left Arc:
+			\begin{itemize}
+				\item Mean X value: -17.2 cm
+				\item Mean Y value: 38.8 cm
+				\item Mean Angular value: 145.6 degrees
+				\item Standard Deviation in X value: 0.8 cm
+				\item Standard Deviation in Y value: 0.5 cm
+				\item Standard Deviation in Angular value: 2.3 degrees
+			\end{itemize}
+		\item Right Arc	:
+			\begin{itemize}
+				\item Mean X value: 25.2 cm
+				\item Mean Y value: 39.0 cm
+				\item Mean Angular value: 33.7 degrees
+				\item Standard Deviation in X value: 1.0 cm
+				\item Standard Deviation in Y value: 0.6 cm
+				\item Standard Deviation in Angular value: 2.3 degrees
+			\end{itemize}	
+	\end{itemize}
+	\bibliography{references.bib}
+	\bibliographystyle{plain}
 	\end{document}
