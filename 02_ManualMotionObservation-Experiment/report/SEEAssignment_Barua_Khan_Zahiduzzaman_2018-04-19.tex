@@ -37,6 +37,9 @@
 		{\large 26-April-2018\par}
 	\end{titlepage}
 	\tableofcontents
+	\listoffigures	
+	\listoftables
+	\newpage
 	\section{Relevant Aspects of Experiment}
 	\subsection{Design of Robot}
 		\begin{itemize}
@@ -44,8 +47,9 @@
 			\item Two of these are driving wheels and are connected to the motors, thus enabling a differential drive systems; and the third is a driven wheel.
 		\end{itemize}
 		\begin{figure}[h]
-			\caption{"Robot Design"}
+			\centering
 			\includegraphics[scale=0.1]{bot.jpg}
+			\caption{Robot Design}
 		\end{figure}
 	\subsection{Measurement of Start and Stop Positions}
 		\begin{itemize}
@@ -92,6 +96,11 @@
 			\item The initial acceleration and final deceleration of the robot has not been considered in the experiments, resulting in low accuracy.
 			\item In addition of the two previous points, slippage in the wheels and motors will also affect the accuracy of readings.
 			\item The driven wheel will also result in the bot to drift and also decrease the distance it reaches.
+			\item In addition, the calculation of expected position in each case is based on percentage of power applied to the motor and duration for which it is applied. However, this may result in an overestimate because of the following:
+				\begin{itemize}
+					\item Actual power output may depend on the charge in batteries and the efficiency of motor.
+					\item Speed of the robot is calculated on the basis of this power output and the load on wheels, for calculation, we have approximated the motor rpm to a no-load condition. This is not true in the actual experiment.
+				\end{itemize} 
 		\end{itemize}
 	\section{Observations and Data}
 		\subsection{Readings}
@@ -124,12 +133,14 @@
 		Detailed data is available in the file "Assignment01\_data.ods"
 	 \subsection{Visualization}
 		 \begin{figure}[H]
-		 	\caption{"Plot of the lines between two pens of robot in various runs"}
+		 	\centering
 		 	\includegraphics[scale=0.5]{line_plot.png}
+		 	\caption{Plot of the lines between two pens of robot in various runs}
 		 \end{figure}
 		 \begin{figure}[H]
-		 	\caption{"Scatter plot for center of robot in various runs"}
+		 	\centering
 		 	\includegraphics[scale=0.5]{scatter_plot.png}
+		 	\caption{Scatter plot for center of robot in various runs}
 		 \end{figure}
 	 All the plots and code is available in the file "SEE\_Experiment01\_plots.ipynb"		
 	\section{Results}
@@ -178,6 +189,8 @@
 				\item Standard Deviation in Angular value: 2.3 degrees
 			\end{itemize}	
 	\end{itemize}
+	The details of calculations of these values is available in the file "SEE\_Experiment01\_plots.ipynb"
+
 	\bibliography{references.bib}
 	\bibliographystyle{plain}
 	\end{document}
