@@ -1,71 +1,17 @@
+---
+bibliography:
+- 'references.bib'
+...
+
 <span style="font-variant:small-caps;">Scientific Experimentation and
 Evaluation</span>
 
-<span style="font-variant:small-caps;">Assignment: 01</span>
+<span style="font-variant:small-caps;">Assignment: 02</span>
 
-19-April-2018
+26-April-2018
 
-Task 1: Formalization of general terms
-======================================
-
-#### Measured value:
-
--   Force using NI DAQ
-
--   Velocity Using EPOS2
-
--   Motor Position using EPOS2
-
-#### Measurement result:
-
--   Force measured by sensor for a chosen depth between 0 and 11.5 mm.
-
-#### DUT:
-
--   Simulab complex tissue model.
-
-#### Measuring facility:
-
--   A 10 DOF (Degrees of freedom) robotic system consisting of Physik
-    instrumente Hexapod and monocarrier drive, which is connected with
-    an indenter.
-
--   Force torque sensor is attached to indenter to provide axial
-    force measurement.
-
--   Force measurements are read using NI DAQ. EPOS2 motor controller is
-    used to read position and velocity of motors.
-
-#### Measuring System:
-
--   A 10 DOF (Degrees of freedom) robotic system consisting of Physik
-    instrumente Hexapod and monocarrier drive, which is connected with
-    an indenter.
-
--   Force torque sensor is attached to indenter to provide axial
-    force measurement.
-
--   Force measurements are read using NI DAQ. EPOS2 motor controller is
-    used to read position and velocity of motors.
-
--   Simulab complex tissue model (DUT).
-
-#### Measuring principle:
-
--   Measuring force by moving indenter to different positions with a
-    chosen depth between 0 and 11.5 mm.
-
-#### Measuring Method:
-
--   To measuring force by virtue of which we determine if the surface of
-    tissue under consideration has a uniform or non-uniform surface.
-
-#### Sensitivity:
-
--   0.04 N
-
-Task 2: Design of Experiment
-============================
+Relevant Aspects of Experiment
+==============================
 
 Design of Robot
 ---------------
@@ -75,6 +21,11 @@ Design of Robot
 -   Two of these are driving wheels and are connected to the motors,
     thus enabling a differential drive systems; and the third is a
     driven wheel.
+
+![Robot Design](bot.jpg)
+
+Measurement of Start and Stop Positions
+---------------------------------------
 
 -   Two pens will be fixed near the two driving wheels. The lines
     joining these two points will be in parallel to the driving axle
@@ -87,45 +38,53 @@ Design of Robot
 -   The starting position will be when this line lies on the x-axis of
     the coordinate system; the end position can be relatively measured.
 
-Measurement Process
--------------------
+Parameters used to drive the robot
+----------------------------------
 
--   **Measured Value**: Observable pose variation for three different
-    constant velocity motions:
+-   Constant angular and translational speed for a fixed time period to
+    describe an arc to left.
 
-    -   An arc to the left
+-   Constant translational speed and no angular speed for a fixed time
+    period to describe a straight line.
 
-    -   A straight line ahead
+-   Constant angular and translational speed for a fixed time period to
+    describe an arc to right.
 
-    -   An arc to the right
+Program used to drive the robot
+-------------------------------
 
--   **Experiments**:
+-   Using the Lego Mindstorms NXT 2.0 software, we created the scenarios
+    for three run sequences.
 
-    -   Constant angular and translational speed for a fixed time period
-        to describe an arc to left.
+-   Straight Line:
 
-    -   Constant translational speed and no angular speed for a fixed
-        time period to describe a straight line.
+    -   Power: 50%
 
-    -   Constant angular and translational speed for a fixed time period
-        to describe an arc to right.
+    -   Duration: 3 Seconds
 
--   **Measurement Procedure**
+    -   Steering Angle: 0 degrees
 
-    -   Length and angles will be measured manually from the start and
-        stop position.
+-   Left Arc:
 
-    -   The positions are marked on a grid paper, on which the
-        robot moves.
+    -   Power: 50%
 
-    -   A coordinate system is defined on the paper for reference and
-        calculation of distances and angles.
+    -   Duration: 3 Seconds
 
-    -   The start position can be marked such that one of the fixed pen
-        lies over the origin of said coordinate system and the other pen
-        lies on X-axis.
+    -   Steering Angle: -45 degrees
 
-    -   This will enable a fixed starting point for all the experiments.
+-   Right Arc:
+
+    -   Power: 50%
+
+    -   Duration: 3 Seconds
+
+    -   Steering Angle: 45 degrees
+
+-   The power percentage to wheel rpm has been calculated on the basis
+    of readings found in @motorInternals. It is observed that in the
+    unloaded condition, 50% power results to around 80 rpm
+
+-   Diameter of wheels: 5.7 cm
 
 Expected Problems and Performance
 ---------------------------------
@@ -149,3 +108,103 @@ Expected Problems and Performance
 
 -   In addition of the two previous points, slippage in the wheels and
     motors will also affect the accuracy of readings.
+
+-   The driven wheel will also result in the bot to drift and also
+    decrease the distance it reaches.
+
+-   In addition, the calculation of expected position in each case is
+    based on percentage of power applied to the motor and duration for
+    which it is applied. However, this may result in an overestimate
+    because of the following:
+
+    -   Actual power output may depend on the charge in batteries and
+        the efficiency of motor.
+
+    -   Speed of the robot is calculated on the basis of this power
+        output and the load on wheels, for calculation, we have
+        approximated the motor rpm to a no-load condition. This is not
+        true in the actual experiment.
+
+Observations and Data
+=====================
+
+Readings
+--------
+
+        X\_L(cm)   Y\_L(cm)   X\_R(cm)   Y\_R(cm)   Angle(degrees)
+  --- ---------- ---------- ---------- ---------- ----------------
+  0            0          0        8.3          0               90
+
+  : Intial Position
+
+Detailed data is available in the file “Assignment01\_data.ods”
+
+Visualization
+-------------
+
+![Plot of the lines between two pens of robot in various
+runs](line_plot.png)
+
+![Scatter plot for center of robot in various runs](scatter_plot.png)
+
+All the plots and code is available in the file
+“SEE\_Experiment01\_plots.ipynb”
+
+Results
+=======
+
+![Scatter plot for centers of robot in Straight
+run](scatter_plot_st.png){width="70.00000%"}
+
+![Scatter plot for centers of robot in Left Arc
+run](scatter_plot_lt.png){width="70.00000%"}
+
+![Scatter plot for centers of robot in Right Arc
+run](scatter_plot_rt.png){width="70.00000%"}
+
+-   Straight Run:
+
+    -   Mean X value: 52.3 cm
+
+    -   Mean Y value: 4.4 cm
+
+    -   Mean Angular value: 88.7 degrees
+
+    -   Standard Deviation in X value: 1.0 cm
+
+    -   Standard Deviation in Y value: 0.1 cm
+
+    -   Standard Deviation in Angular value: 1.0 degrees
+
+    -   Accuracy: 73 %
+
+-   Left Arc:
+
+    -   Mean X value: -17.2 cm
+
+    -   Mean Y value: 38.8 cm
+
+    -   Mean Angular value: 145.6 degrees
+
+    -   Standard Deviation in X value: 0.8 cm
+
+    -   Standard Deviation in Y value: 0.5 cm
+
+    -   Standard Deviation in Angular value: 2.3 degrees
+
+-   Right Arc :
+
+    -   Mean X value: 25.2 cm
+
+    -   Mean Y value: 39.0 cm
+
+    -   Mean Angular value: 33.7 degrees
+
+    -   Standard Deviation in X value: 1.0 cm
+
+    -   Standard Deviation in Y value: 0.6 cm
+
+    -   Standard Deviation in Angular value: 2.3 degrees
+
+The details of calculations of these values is available in the file
+“SEE\_Experiment01\_plots.ipynb”
