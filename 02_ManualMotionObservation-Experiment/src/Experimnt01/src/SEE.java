@@ -7,8 +7,8 @@ public class SEE {
   final static int INITIAL_SLEEP_TIME = 500;
   final static int SLEEP_TIME = 2250;
 
-  final static float DIAMETER = 56.0f;
-  final static float TRACK_WIDTH = 186.0f;
+  final static float DIAMETER = 57.0f;
+  final static float TRACK_WIDTH = 115.0f;
 
   final static int ENTER_BUTTON_CODE = 1;
   final static int LEFT_BUTTON_CODE = 2;

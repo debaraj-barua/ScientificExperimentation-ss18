@@ -4,6 +4,7 @@
 	\usepackage{fancyhdr}
 	\usepackage{hyperref}
 	\usepackage{graphicx}
+	\usepackage{subcaption}
 	\usepackage{caption}
 	\usepackage{cite}
 	\usepackage{booktabs}
@@ -46,26 +47,104 @@
 	\subsection{Design of Robot}
 		\begin{itemize}
 			\item The robot has been designed with three wheels.
-			\item Two of these are driving wheels and are connected to the motors, thus enabling a differential drive systems; and the third is a caster wheel at the back.
-			\item Wheels are oriented as shown in the \textcolor{red}{images below}.
-			\item \textcolor{red}{In addition, as shown below, it is ensured that the caster wheel does not rotate 360$^\circ$}.
+			\item Two of these are driving wheels and are connected to the motors, thus enabling a differential drive systems; and \textcolor{blue}{the third is a caster wheel at the back}.
+			\item Wheels are oriented as shown in the \textcolor{blue}{images below}.
+			\begin{figure}[H]
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[width=0.8\linewidth]{img/front.jpeg}
+					\caption{Front View}
+					\label{fig:fview}
+				\end{subfigure}%
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[width=0.8\linewidth]{img/right.jpeg}
+					\caption{Right View}
+					\label{fig:rview}
+				\end{subfigure}
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[width=0.8\linewidth]{img/left.jpeg}
+					\caption{Left View}
+					\label{fig:lview}
+				\end{subfigure}
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[width=0.8\linewidth]{img/top.jpeg}
+					\caption{Top View}
+					\label{fig:tview}
+				\end{subfigure}
+				\begin{subfigure}{0.5\textwidth}
+					\centering
+					\includegraphics[width=0.8\linewidth]{img/bottom.jpeg}
+					\caption{Bottom View}
+					\label{fig:bottomview}
+				\end{subfigure}
+				\caption{Robot Design}
+				\label{fig:Robotfig}
+			\end{figure}
+			\item \textcolor{blue}{In addition, as shown above in the bottom view, it is ensured that the caster wheel does not rotate 360$^\circ$}.
 		\end{itemize}
-		\begin{figure}[h]
-			\centering
-			\includegraphics[scale=0.1]{bot.jpg}
-			\caption{Robot Design}
-		\end{figure}
-	\subsection{Transformations}
-		\textcolor{red}{
-			Write transformation formula from pen axis to wheel axis.
+		
+	\subsection{Transformations}\textcolor{red}{
+			- Distance from pen axis to wheel axis = 5 cm \\
+			- Distance between the mid points of the two wheels (track width) = 11.5 cm \\
+			- WRITE FORMULA
 			}
 	\subsection{Measurement of Start and Stop Positions}
+		\subsubsection{Measurement Instruments}\textcolor{blue}{
+			\begin{itemize}
+				\item Distance:
+				\begin{itemize}
+					\item We use a scale ruler to measure the distances.
+					\item In addition, we also utilize the grids on the paper which acts as our workspace and world coordinate systems.
+					\item Instrument Details:
+					\begin{itemize}
+						\item 1 square of the grid paper equals $2.5 \times 2.5$ cm
+						\item The precision of the scale used is 1 mm.
+					\end{itemize}
+				\end{itemize}
+				\item Angle:
+				\begin{itemize}
+					\item A protractor is used as a measuring instrument for the angles.
+					\item Instrument Details:
+					\begin{itemize}
+						\item Precision of the protractor used is 1$^\circ$.
+					\end{itemize}
+				\end{itemize}
+			\end{itemize}
+		}
+		\subsubsection{Measurement Procedure} \textcolor{blue}{
 		\begin{itemize}
-			\item Two pens will be fixed near the two driving wheels. The lines joining these two points will be in parallel to the driving axle (considering the axis between two driving wheels).
-			\item The axis formed between these two points will be used to mark the orientation of robot, with respect to the coordinate system defined (described below).
-			\item The starting position will be when this line lies on the x-axis of the coordinate system; the end position can be relatively measured.
-			\item \textcolor{red}{For each run, at the initial condition, it is ensured that orientation of rear caster wheel axle is parallel to the driving wheel axis.}
+			\item Two pens will be fixed near the two driving wheels.
+			\item The starting position is where the two pens meets the x -axis, with the left pen lying on the origin (right pen at a distance of  8.3 cm from the origin).			
+			\begin{figure}[h]
+				\centering
+				\includegraphics[width=0.4\linewidth]{img/starting-pt.jpeg}
+				\caption{Staring Position}
+				\label{fig:startingView}
+			\end{figure}
+			\item To measure the orientation of robot, the two points from these pens will be joined by drawing a line, which will be used to mark the pose of robot, with respect to the coordinate system defined.
+			\item For each run, at the initial condition, it is ensured that orientation of rear caster wheel axle is parallel to the driving wheel axis.
+			\item Measuring Position:
+				\begin{itemize}
+					\item To get the position of the robot, we measure the distance of the two points from X and Y axis using a scale ruler.
+					\item These two readings are put in the transformation equation described above to get the actual position of the robot.
+				\end{itemize}
+			\item Measuring Angles:
+				\begin{itemize}
+					\item The angular pose of the robot is the angle the X-axis makes with the normal to the line joining the two points.
+					\item This angle is equal to the angle Y-axis makes with the line joining the two points. This can be verified using basic geometry, as shown in the image below.
+					\begin{figure}[h]
+						\centering
+						\includegraphics[width=0.4\linewidth]{img/angles.jpeg}
+						\caption{Measurement of angles}
+						\label{fig:angGeometry}
+					\end{figure}
+					\item We now measure the angle using a protractor.
+				\end{itemize}
 		\end{itemize}
+		}
 	\subsection{Parameters used to drive the robot}
 		\begin{itemize}
 			\item Constant angular and translational speed for a fixed time period to describe an arc to left.
