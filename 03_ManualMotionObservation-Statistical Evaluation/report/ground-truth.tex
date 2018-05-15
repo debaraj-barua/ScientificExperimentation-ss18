@@ -1,0 +1,65 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+
+\begin{document}
+
+
+\section{Ground truth}
+
+\begin{align} 
+\begin{split}
+R 	&= \frac{l}{2} \frac{V_l + V_r}{V_r - V_l}
+\end{split}					
+\end{align}
+
+\begin{align} 
+\begin{split}
+\omega 	&= \frac{V_r - V_l}{l}
+\end{split}					
+\end{align}
+
+\begin{align} 
+\begin{split}
+ICC 	&= [x - R sin(\theta), y + R cos(\theta)]
+\end{split}					
+\end{align}
+
+
+\begin{align}
+\begin{bmatrix}
+x^{'} \\
+y^{'} \\
+\theta^{'}
+\end{bmatrix}
+= 
+\begin{bmatrix}
+cos(\omega \delta t) & -sin(\omega \delta t) & 0\\
+sin(\omega \delta t) & -cos(\omega \delta t) & 0\\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x - ICC_x\\
+y - ICC_y \\
+\theta
+\end{bmatrix}
++
+\begin{bmatrix}
+ICC_x\\
+ICC_y \\
+\omega \delta t
+\end{bmatrix}
+\end{align}
+
+Where,
+\begin{itemize}
+	\item $l$ is the distance between the centers of the two wheels
+	\item $Vr, Vl$ are the right and left wheel velocities along the ground
+	\item $R$ is the signed distance from the Instantaneous Center of Curvature (ICC) to the midpoint between the wheels
+	\item $\omega$ is the rate of rotation about the ICC
+\end{itemize}
+
+
+
+\end{document}
