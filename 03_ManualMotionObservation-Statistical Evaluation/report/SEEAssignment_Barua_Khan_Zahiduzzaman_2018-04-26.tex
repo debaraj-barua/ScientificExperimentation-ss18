@@ -12,6 +12,7 @@
 			\usepackage{float}
 			\usepackage{amsmath}
 			\usepackage{xcolor}
+			\usepackage{listings}
 			
 			\restylefloat{table}
 		
@@ -86,45 +87,27 @@
 					\end{figure}
 					\item \textcolor{blue}{In addition, as shown above in the bottom view, it is ensured that the caster wheel does not rotate more than 360$^\circ$}.
 				\end{itemize}
-				
-			\subsection{Transformations}\textcolor{red}{
+			\input{ground-truth}
+			\subsection{\textcolor{blue}{Transformations}}							
 				\begin{itemize}
 					\item Perpendicular distance from pen axis to wheel axis = 4.6 cm
 					\item Distance between the mid points of the two wheels (track width) = 11.1 cm
 					\item The axis of the wheel is considered to be parallel to the axis formed by joining the two pens.
-					\item Thus, the transformation matrix can be represented as:
-					$$
-					\begin{bmatrix}
-						\cos\theta & -\sin\theta & 0 & 0 \\
-						\sin\theta &\cos\theta & 0 & -4.6 \\
-						0 & 0 & 1 & 0 \\
-						0 & 0 & 0 & 1 \\
-					\end{bmatrix}					
-					$$
-					where, $\theta$ gives the angular orientation of the robot axis with respect to the world coordinate system. This value is $90^\circ-$(angular value of robot pose) 
-					\item So, at the initial condition, for given coordinate of left and right pens (for example, $(x_{left},y_{left})$ and $(x_{right},y_{right})$ and $\theta = 0^\circ$), coordinate of center of motion can be represented as:
-					\begin{align*}
-					\begin{bmatrix}
-					x\\y\\z
-					\end{bmatrix} &=
-									\begin{bmatrix}
-									1 & 0 & 0 & 0 \\
-									0 & 1 & 0 & -4.6 \\
-									0 & 0 & 1 & 0 \\
-									%0 & 0 & 0 & 1 \\
-									\end{bmatrix} 
-										\times
-									\begin{bmatrix}
-									\frac{x_{left}+x_{right}}{2}\\\frac{y_{left}+y_{right}}{2}\\0
-									\end{bmatrix}\\\
-								&=\begin{bmatrix}
-								\frac{x_{left}+x_{right}}{2}\\\frac{y_{left}+y_{right}}{2}-4.6	\\0
-								\end{bmatrix}											
-					\end{align*}
+					\item 	To calculate the center of motion for robot, we use the function as shown below.
+					\item The \textit{row} variable has three components, x-coordinate, y-coordinate and the angle of orientation of the robot. 
 				\end{itemize}
-			}
+\begin{lstlisting}[language=Python]
+def computeCenterOfMotion(data):
+	com = np.zeros((data.shape[0],3))
+	for i,row in enumerate(data[:]):
+		x = row[0]+distance_between_axes*np.cos(np.deg2rad(row[2]))
+		y = row[1]+distance_between_axes*np.sin(np.deg2rad(row[2]))
+		com[i,:]=np.array([x,y,row[2]])        
+	return com
+\end{lstlisting}
+			
 			\subsection{Measurement of Start and Stop Positions}
-				\subsubsection{Measurement Instruments}\textcolor{blue}{
+				\subsubsection{\textcolor{blue}{Measurement Instruments}}
 					\begin{itemize}
 						\item Distance:
 						\begin{itemize}
@@ -145,8 +128,7 @@
 							\end{itemize}
 						\end{itemize}
 					\end{itemize}
-				}
-				\subsubsection{Measurement Procedure} \textcolor{blue}{
+				\subsubsection{\textcolor{blue}{Measurement Procedure}}
 				\begin{itemize}
 					\item Two pens will be fixed near the two driving wheels.
 					\item The starting position is where the two pens meets the x -axis, with the left pen lying on the origin (right pen at a distance of  8.3 cm from the origin).			
@@ -176,8 +158,7 @@
 							\item We now measure the angle using a protractor.
 						\end{itemize}
 				\end{itemize}
-				}
-			\subsection{Parameters used to drive the robot}\textcolor{blue}{
+			\subsection{Parameters used to drive the robot}
 				\begin{itemize}
 					\item Constant angular and translational speed for a fixed time period to describe an arc to left.
 					\item Constant translational speed and no angular speed for a fixed time period to describe a straight line.
@@ -187,8 +168,7 @@
 					\item Turn Rate = 40
 					\item Diameter of wheels: 5.7 cm
 				\end{itemize}
-			}
-			\subsection{Program used to drive the robot}\textcolor{blue}{
+			\subsection{Program used to drive the robot}
 				\begin{itemize}
 					\item Using the JAVA code shared in LEA, we created the scenarios for three run sequences.
 					\item Straight Line:
@@ -210,7 +190,6 @@
 							\item Turn Rate = -40
 						\end{itemize}							
 				\end{itemize}
-			}
 			\subsection{Expected Problems and Performance}
 				\begin{itemize}
 					\item Axis connecting the two pens might not be parallel to the wheel axle.
@@ -219,45 +198,34 @@
 					\item The constant angular and translational speeds that we assume, may be inaccurate. The actual speed may differ and thus our estimate from the time will be inaccurate.
 					\item The initial acceleration and final deceleration of the robot has not been considered in the experiments, resulting in low accuracy.
 					\item In addition of the two previous points, slippage in the wheels and motors will also affect the accuracy of readings.
-					\item The driven wheel will also result in the bot to drift and also decrease the distance it reaches.
-					\item In addition, the calculation of expected position in each case is based on percentage of power applied to the motor and duration for which it is applied. However, this may result in an overestimate because of the following:
-						\begin{itemize}
-							\item Actual power output may depend on the charge in batteries and the efficiency of motor.
-							\item Speed of the robot is calculated on the basis of this power output and the load on wheels, for calculation, we have approximated the motor rpm to a no-load condition. This is not true in the actual experiment.
-						\end{itemize} 
+					\item The caster wheel will also result in the bot to drift and also decrease the distance it reaches.
+					\item In addition, the calculation of expected position may result in an overestimate because actual power output may depend on the charge in batteries and the efficiency of motor.
 				\end{itemize}
 			\section{Observations and Data}
 				\subsection{Readings}
-				\begin{table}[H]
-					\centering
-					\input{initial}
-					\caption{Intial Position}
-				\end{table}
-				\begin{table}[H]
-					\centering
-					\input{straight}
-					\caption{Straight Line Position}
-				\end{table}
-				\begin{table}[H]
-					\centering
-					\input{leftArc}
-					\caption{Left Arc Position}
-				\end{table}
-				\begin{table}[H]
-					\centering
-					\input{rightArc}
-					\caption{Right Arc Position}
-				\end{table}
-				Detailed data is available in the file "Assignment01\_data.ods"
+					\begin{table}[H]
+						\centering
+						\input{initial}
+						\caption{Intial Position}
+					\end{table}
+					\begin{table}[H]
+						\centering
+						\input{straight}
+						\caption{Straight Line Position}
+					\end{table}
+					\begin{table}[H]
+						\centering
+						\input{leftArc}
+						\caption{Left Arc Position}
+					\end{table}
+					\begin{table}[H]
+						\centering
+						\input{rightArc}
+						\caption{Right Arc Position}
+					\end{table}
 				 \subsection{Visualization}
 					 \begin{figure}[H]
-%						 	\begin{subfigure}{0.5\textwidth}
-%						 		\centering
-%						 		\includegraphics[width=0.9\linewidth]{img/line_plot.png}
-%						 		\caption{Plot of the lines between two pens of robot in various runs}
-%						 	\end{subfigure}%
-%						 	\hfill
-						 	\begin{subfigure}{0.5\textwidth}
+						 	\begin{subfigure}{\textwidth}
 						 		\centering
 						 		\includegraphics[width=0.9\linewidth]{img/scatter_plot.png}
 						 		\caption{Scatter plot for center of robot in various runs}
@@ -283,7 +251,7 @@
 						 	\end{subfigure}
 						 	\caption{Zoomed View of Robot Positions}
 				     \end{figure}	
-				All the plots and code is available in the file "SEE\_Experiment01\_plots.ipynb"\\
+				All the plots and code is available in the file "SEE\_Experiment03\_calculations.ipynb"\\
 				\subsection{Software and Libraries used}
 				\begin{itemize}
 					\item \textbf{LibreOffice Calc} for data recording and initial transformation calculations.
@@ -303,34 +271,36 @@
 			\begin{itemize}
 				\item Straight Run:		
 					\begin{itemize}
-						\item Mean X value: 52.3 cm
-						\item Mean Y value: 4.4 cm
-						\item Mean Angular value: 88.7 degrees
+						\item Mean X value: 5.4 cm
+						\item Mean Y value: 44.4 cm
+						\item Mean Angular value: 89 degrees
 						\item Standard Deviation in X value: 1.0 cm
 						\item Standard Deviation in Y value: 0.1 cm
-						\item Standard Deviation in Angular value: 1.0 degrees
-						\item Accuracy: 73 \%
+						\item Standard Deviation in Angular value: 1.2 degrees
+						\item Accuracy: 98.86 \%
 					\end{itemize}
 				\item Left Arc:
 					\begin{itemize}
-						\item Mean X value: -17.2 cm
-						\item Mean Y value: 38.8 cm
-						\item Mean Angular value: 145.6 degrees
+						\item Mean X value: -13.2 cm
+						\item Mean Y value: 27.9 cm
+						\item Mean Angular value: 165.6 degrees
 						\item Standard Deviation in X value: 0.8 cm
-						\item Standard Deviation in Y value: 0.5 cm
-						\item Standard Deviation in Angular value: 2.3 degrees
+						\item Standard Deviation in Y value: 0.6 cm
+						\item Standard Deviation in Angular value: 2.2 degrees
+						\item Accuracy: 95.57 \%
 					\end{itemize}
 				\item Right Arc	:
 					\begin{itemize}
-						\item Mean X value: 25.2 cm
-						\item Mean Y value: 39.0 cm
-						\item Mean Angular value: 33.7 degrees
-						\item Standard Deviation in X value: 1.0 cm
-						\item Standard Deviation in Y value: 0.6 cm
-						\item Standard Deviation in Angular value: 2.3 degrees
+						\item Mean X value: 21.6 cm
+						\item Mean Y value: 27.6 cm
+						\item Mean Angular value: 17 degrees
+						\item Standard Deviation in X value: 1.3 cm
+						\item Standard Deviation in Y value: 0.7 cm
+						\item Standard Deviation in Angular value: 2.8 degrees
+						\item Accuracy: 93.01 \%
 					\end{itemize}	
 			\end{itemize}
-			The details of calculations of these values is available in the file "SEE\_Experiment01\_plots.ipynb"
+			The details of calculations of these values is available in the file "SEE\_Experiment01\_calculations.ipynb"
 			\subsection{Compare Data with Gaussian}
 			To verify if the observed data follows a gaussian distribution, we use a the \textit{scipy} library. The \textit{scipy.stats.normaltest} function is used to check if the data follows a normal distribution. 
 			

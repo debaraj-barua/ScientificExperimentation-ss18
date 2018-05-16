@@ -1,12 +1,4 @@
-\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
-
-\usepackage{amsmath,amsfonts,amsthm} % Math packages
-
-
-\begin{document}
-
-
-\section{Ground truth}
+\subsection{\textcolor{blue}{Formulas used for calculation of ground truth}}
 
 \begin{align} 
 \begin{split}
@@ -54,12 +46,8 @@ ICC_y \\
 
 Where,
 \begin{itemize}
-	\item $l$ is the distance between the centers of the two wheels
-	\item $Vr, Vl$ are the right and left wheel velocities along the ground
+	\item $l$ is the distance between the centers of the two wheels, (here, 11.1 cm)
+	\item $V_r, V_l$ are the right and left wheel velocities along the ground
 	\item $R$ is the signed distance from the Instantaneous Center of Curvature (ICC) to the midpoint between the wheels
 	\item $\omega$ is the rate of rotation about the ICC
 \end{itemize}
-
-
-
-\end{document}
