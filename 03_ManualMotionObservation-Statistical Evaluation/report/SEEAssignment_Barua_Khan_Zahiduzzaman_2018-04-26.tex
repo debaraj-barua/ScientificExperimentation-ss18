@@ -87,16 +87,16 @@
 					\item \textcolor{blue}{In addition, as shown above in the bottom view, it is ensured that the caster wheel does not rotate 360$^\circ$}.
 				\end{itemize}
 				
-			\subsection{Transformations}\textcolor{blue}{
+			\subsection{Transformations}\textcolor{red}{
 				\begin{itemize}
-					\item Distance from pen axis to wheel axis = 5 cm
-					\item Distance between the mid points of the two wheels (track width) = 11.5 cm
+					\item Perpendicular distance from pen axis to wheel axis = 4.6 cm
+					\item Distance between the mid points of the two wheels (track width) = 11.1 cm
 					\item The axis of the wheel is considered to be parallel to the axis formed by joining the two pens.
 					\item Thus, the transformation matrix can be represented as:
 					$$
 					\begin{bmatrix}
 						\cos\theta & -\sin\theta & 0 & 0 \\
-						\sin\theta &\cos\theta & 0 & -5 \\
+						\sin\theta &\cos\theta & 0 & -4.6 \\
 						0 & 0 & 1 & 0 \\
 						0 & 0 & 0 & 1 \\
 					\end{bmatrix}					
@@ -109,7 +109,7 @@
 					\end{bmatrix} &=
 									\begin{bmatrix}
 									1 & 0 & 0 & 0 \\
-									0 & 1 & 0 & -5 \\
+									0 & 1 & 0 & -4.6 \\
 									0 & 0 & 1 & 0 \\
 									%0 & 0 & 0 & 1 \\
 									\end{bmatrix} 
@@ -118,7 +118,7 @@
 									\frac{x_{left}+x_{right}}{2}\\\frac{y_{left}+y_{right}}{2}\\0
 									\end{bmatrix}\\\
 								&=\begin{bmatrix}
-								\frac{x_{left}+x_{right}}{2}\\\frac{y_{left}+y_{right}}{2}-5\\0
+								\frac{x_{left}+x_{right}}{2}\\\frac{y_{left}+y_{right}}{2}-4.6	\\0
 								\end{bmatrix}											
 					\end{align*}
 				\end{itemize}
@@ -182,8 +182,8 @@
 					\item Constant angular and translational speed for a fixed time period to describe an arc to left.
 					\item Constant translational speed and no angular speed for a fixed time period to describe a straight line.
 					\item Constant angular and translational speed for a fixed time period to describe an arc to right.
-					\item Speed = 24 cm/s
-					\item Duration = 3 seconds
+					\item Speed = 18 cm/s
+					\item Duration = 2.25 seconds
 					\item Turn Rate = 40
 					\item Diameter of wheels: 5.7 cm
 				\end{itemize}
@@ -193,21 +193,21 @@
 					\item Using the JAVA code shared in LEA, we created the scenarios for three run sequences.
 					\item Straight Line:
 						\begin{itemize}
-							\item Speed = 24 cm/s
-							\item Duration: 3 Seconds
+							\item Speed = 18 cm/s
+							\item Duration: 2.25 Seconds
 							\item Turn Rate = 0
 						\end{itemize}
 					\item Left Arc:
 						\begin{itemize}
-							\item Speed = 24 cm/s
-							\item Duration: 3 Seconds
-							\item Turn Rate = -40
+							\item Speed = 18 cm/s
+							\item Duration: 2.25 Seconds
+							\item Turn Rate = 40
 						\end{itemize}
 					\item Right Arc:
 						\begin{itemize}
-							\item Speed = 24 cm/s
-							\item Duration: 3 Seconds
-							\item Turn Rate = 40
+							\item Speed = 18 cm/s
+							\item Duration: 2.25 Seconds
+							\item Turn Rate = -40
 						\end{itemize}							
 				\end{itemize}
 			}
@@ -251,12 +251,12 @@
 				Detailed data is available in the file "Assignment01\_data.ods"
 				 \subsection{Visualization}
 					 \begin{figure}[H]
-						 	\begin{subfigure}{0.5\textwidth}
-						 		\centering
-						 		\includegraphics[width=0.9\linewidth]{img/line_plot.png}
-						 		\caption{Plot of the lines between two pens of robot in various runs}
-						 	\end{subfigure}%
-						 	\hfill
+%						 	\begin{subfigure}{0.5\textwidth}
+%						 		\centering
+%						 		\includegraphics[width=0.9\linewidth]{img/line_plot.png}
+%						 		\caption{Plot of the lines between two pens of robot in various runs}
+%						 	\end{subfigure}%
+%						 	\hfill
 						 	\begin{subfigure}{0.5\textwidth}
 						 		\centering
 						 		\includegraphics[width=0.9\linewidth]{img/scatter_plot.png}
