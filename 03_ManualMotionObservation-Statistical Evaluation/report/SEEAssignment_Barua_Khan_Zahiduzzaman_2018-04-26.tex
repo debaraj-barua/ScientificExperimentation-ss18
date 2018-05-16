@@ -85,7 +85,7 @@
 						\caption{Robot Design}
 						\label{fig:Robotfig}
 					\end{figure}
-					\item \textcolor{blue}{In addition, as shown above in the bottom view, it is ensured that the caster wheel does not rotate more than 360$^\circ$}.
+					\item \textcolor{blue}{In addition, it is ensured that the caster wheel cannot rotate completely, and its rotation is limited as shown in the bottom view}.
 				\end{itemize}
 			\input{ground-truth}
 			\subsection{\textcolor{blue}{Transformations}}							
@@ -94,7 +94,7 @@
 					\item Distance between the mid points of the two wheels (track width) = 11.1 cm
 					\item The axis of the wheel is considered to be parallel to the axis formed by joining the two pens.
 					\item 	To calculate the center of motion for robot, we use the function as shown below.
-					\item The \textit{row} variable has three components, x-coordinate, y-coordinate and the angle of orientation of the robot. 
+					\item The \textit{row} variable has three components, $x$ and $y$ coordinates of the center between two pens and the orientation angle of the robot. 
 				\end{itemize}
 \begin{lstlisting}[language=Python]
 def computeCenterOfMotion(data):
@@ -201,7 +201,7 @@ def computeCenterOfMotion(data):
 					\item The caster wheel will also result in the bot to drift and also decrease the distance it reaches.
 					\item In addition, the calculation of expected position may result in an overestimate because actual power output may depend on the charge in batteries and the efficiency of motor.
 				\end{itemize}
-			\section{Observations and Data}
+			\section{\textcolor{blue}{Observations and Data}}
 				\subsection{Readings}
 					\begin{table}[H]
 						\centering
@@ -266,7 +266,7 @@ def computeCenterOfMotion(data):
 					\end{itemize}
 				\end{itemize}		
 				
-			\section{Results}			
+			\section{\textcolor{blue}{Results}}
 			\subsection{Final Position \& Accuracy }
 			\begin{itemize}
 				\item Straight Run:		
@@ -300,7 +300,7 @@ def computeCenterOfMotion(data):
 						\item Accuracy: 93.01 \%
 					\end{itemize}	
 			\end{itemize}
-			The details of calculations of these values is available in the file "SEE\_Experiment01\_calculations.ipynb"
+			The details of calculations of these values is available in the file "SEE\_Experiment03\_calculations.ipynb"
 			\subsection{Compare Data with Gaussian}
 			To verify if the observed data follows a gaussian distribution, we use a the \textit{scipy} library. The \textit{scipy.stats.normaltest} function is used to check if the data follows a normal distribution. 
 			
