@@ -18,8 +18,8 @@
 		
 			\pagestyle{fancy}
 			\fancyhf{}
-			\rhead{26-April-2018}
-			\lhead{Assignment 03}
+			\rhead{17-May-2018}
+			\lhead{Assignment 04}
 			\rfoot{Page \thepage}
 		
 			\begin{document}
@@ -28,7 +28,7 @@
 		
 				{\scshape\LARGE Scientific Experimentation and Evaluation\par}
 		
-				{\scshape\Large Assignment: 03\par}
+				{\scshape\Large Assignment: 04\par}
 		
 				\vfill
 		
@@ -39,7 +39,7 @@
 					\par}
 				\vfill
 		
-				{\large 26-April-2018\par}
+				{\large 17-May-2018\par}
 			\end{titlepage}
 			\tableofcontents
 			\listoffigures	
@@ -49,8 +49,8 @@
 			\subsection{Design of Robot}
 				\begin{itemize}
 					\item The robot has been designed with three wheels.
-					\item Two of these are driving wheels and are connected to the motors, thus enabling a differential drive systems; and \textcolor{blue}{the third is a caster wheel at the back}.
-					\item Wheels are oriented as shown in the \textcolor{blue}{images below}.
+					\item Two of these are driving wheels and are connected to the motors, thus enabling a differential drive systems; and \textcolor{black}{the third is a caster wheel at the back}.
+					\item Wheels are oriented as shown in the \textcolor{black}{images below}.
 					\begin{figure}[H]
 						\begin{subfigure}{0.5\textwidth}
 							\centering
@@ -85,10 +85,10 @@
 						\caption{Robot Design}
 						\label{fig:Robotfig}
 					\end{figure}
-					\item \textcolor{blue}{In addition, it is ensured that the caster wheel cannot rotate completely, and its rotation is limited as shown in the bottom view}.
+					\item \textcolor{black}{In addition, it is ensured that the caster wheel cannot rotate completely, and its rotation is limited as shown in the bottom view}.
 				\end{itemize}
 			\input{ground-truth}
-			\subsection{\textcolor{blue}{Transformations}}							
+			\subsection{\textcolor{black}{Transformations}}							
 				\begin{itemize}
 					\item Perpendicular distance from pen axis to wheel axis = 4.6 cm
 					\item Distance between the mid points of the two wheels (track width) = 11.1 cm
@@ -128,7 +128,7 @@ def computeCenterOfMotion(data):
 							\end{itemize}
 						\end{itemize}
 					\end{itemize}
-				\subsubsection{\textcolor{blue}{Measurement Procedure}}
+				\subsubsection{\textcolor{black}{Measurement Procedure}}
 				\begin{itemize}
 					\item Two pens will be fixed near the two driving wheels.
 					\item The starting position is where the two pens meets the x -axis, with the left pen lying on the origin (right pen at a distance of  8.3 cm from the origin).			
@@ -276,18 +276,22 @@ def computeCenterOfMotion(data):
 						\item Mean Angular value: 89 degrees
 						\item Standard Deviation in X value: 1.0 cm
 						\item Standard Deviation in Y value: 0.1 cm
-						\item Standard Deviation in Angular value: 1.2 degrees
-						\item Accuracy: 98.86 \%
+						\item Standard Deviation in Angular value: 1 degrees
+						\item Accuracy in X-coordinate: 67.26\%
+						\item Accuracy in Y-coordinate: 98.43\%
+						\item Accuracy in angular: 98.60\%
 					\end{itemize}
 				\item Left Arc:
 					\begin{itemize}
 						\item Mean X value: -13.2 cm
 						\item Mean Y value: 27.9 cm
-						\item Mean Angular value: 165.6 degrees
+						\item Mean Angular value: 166 degrees
 						\item Standard Deviation in X value: 0.8 cm
 						\item Standard Deviation in Y value: 0.6 cm
-						\item Standard Deviation in Angular value: 2.2 degrees
-						\item Accuracy: 95.57 \%
+						\item Standard Deviation in Angular value: 2 degrees
+						\item Accuracy in X-coordinate:  84.85\%						
+						\item Accuracy in Y-coordinate:   95.03\%
+						\item Accuracy in angular:  89.96\%
 					\end{itemize}
 				\item Right Arc	:
 					\begin{itemize}
@@ -296,8 +300,10 @@ def computeCenterOfMotion(data):
 						\item Mean Angular value: 17 degrees
 						\item Standard Deviation in X value: 1.3 cm
 						\item Standard Deviation in Y value: 0.7 cm
-						\item Standard Deviation in Angular value: 2.8 degrees
-						\item Accuracy: 93.01 \%
+						\item Standard Deviation in Angular value: 3 degrees
+						\item Accuracy in X-coordinate:   90.38\%
+						\item Accuracy in Y-coordinate:   96.73\%
+						\item Accuracy in angular:  87.22\%
 					\end{itemize}	
 			\end{itemize}
 			The details of calculations of these values is available in the file "SEE\_Experiment03\_calculations.ipynb"
