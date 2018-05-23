@@ -252,6 +252,15 @@ def computeCenterOfMotion(data):
 						 	\caption{Zoomed View of Robot Positions}
 				     \end{figure}	
 				All the plots and code is available in the file "SEE\_Experiment03\_calculations.ipynb"\\
+				\subsection{\textcolor{blue}{Uncertainty of Measurement}}
+				The estimated uncertainty of measurement for position and rotation is $4.5$ millimeters and $0.5^{\circ}$ respectively.  
+				\begin{itemize}
+					\item The uncertainty for rotation occurs because of taking the readings manually using protractor and sometimes the value falls in between two points and we took nearest round value. Hence the uncertainty of measurement in this case is $0.5^{\circ}$.
+					
+					\item  The pen used for marking the position was fixed but still there is a small movement of maximum 4 millimeters possible which contributes to the uncertainty of position measurement.
+					
+					\item Moreover, position measurements sometimes falls between two values in millimeter scale and we took the nearest value. This contributes maximum $0.5$ millimeters of uncertainty of position measurement.
+				\end{itemize}
 				\subsection{Software and Libraries used}
 				\begin{itemize}
 					\item \textbf{LibreOffice Calc} for data recording and initial transformation calculations.
