@@ -7,3 +7,4 @@
  - [Calibration Example](http://www.vision.caltech.edu/bouguetj/calib_doc/htmls/example.html)
     - Follow this.
     - [This link contains our sample images](backup_images_calibration/calib_images_jpg)
+    - dx and dy for the grid is 23 mm each,
