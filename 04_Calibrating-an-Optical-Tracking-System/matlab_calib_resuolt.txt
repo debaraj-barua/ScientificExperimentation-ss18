@@ -1,0 +1,321 @@
+# Calibration
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+Initialization of the intrinsic parameters - Number of images: 26
+
+
+Calibration parameters after initialization:
+
+Focal Length:          fc = [ 975.82530   975.82530 ]
+Principal point:       cc = [ 639.50000   359.50000 ]
+Skew:             alpha_c = [ 0.00000 ]   => angle of pixel = 90.00000 degrees
+Distortion:            kc = [ 0.00000   0.00000   0.00000   0.00000   0.00000 ]
+
+Main calibration optimization procedure - Number of images: 26
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...20...21...22...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 975.96279   980.17380 ] +/- [ 3.83149   4.05047 ]
+Principal point:       cc = [ 608.87589   360.95317 ] +/- [ 5.83438   4.17022 ]
+Skew:             alpha_c = [ 0.00000 ] +/- [ 0.00000  ]   => angle of pixel axes = 90.00000 +/- 0.00000 degrees
+Distortion:            kc = [ 0.00547   0.00248   -0.00297   -0.00278  0.00000 ] +/- [ 0.01074   0.02937   0.00138   0.00206  0.00000 ]
+Pixel error:          err = [ 0.41039   0.49167 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+Recommendation: Some distortion coefficients are found equal to zero (within their uncertainties).
+                To reject them from the optimization set est_dist=[1;0;1;1;0] and run Calibration
+
+# Reproject
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+Pixel error:      err = [0.41039   0.49167] (all active images)
+
+
+
+# Recompute Corners
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Re-extraction of the grid corners on the images (after first calibration)
+Window size for corner finder (wintx and winty):
+
+
+Window size = 11x11
+
+
+Processing image 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...20...21...22...23...24...25...26...
+done
+
+Aspect ratio optimized (est_aspect_ratio = 1) -> both components of fc are estimated (DEFAULT).
+Principal point optimized (center_optim=1) - (DEFAULT). To reject principal point, set center_optim=0
+Skew not optimized (est_alpha=0) - (DEFAULT)
+Distortion not fully estimated (defined by the variable est_dist):
+     Sixth order distortion not estimated (est_dist(5)=0) - (DEFAULT) .
+
+Main calibration optimization procedure - Number of images: 26
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 975.23956   979.87915 ] +/- [ 8.02496   8.49150 ]
+Principal point:       cc = [ 606.65357   356.87926 ] +/- [ 12.10229   8.74319 ]
+Skew:             alpha_c = [ 0.00000 ] +/- [ 0.00000  ]   => angle of pixel axes = 90.00000 +/- 0.00000 degrees
+Distortion:            kc = [ 0.01087   -0.01935   -0.00401   -0.00316  0.00000 ] +/- [ 0.02233   0.06042   0.00287   0.00430  0.00000 ]
+Pixel error:          err = [ 1.14310   0.70349 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+Recommendation: Some distortion coefficients are found equal to zero (within their uncertainties).
+                To reject them from the optimization set est_dist=[0;0;1;1;0] and run Calibration
+
+# Recomputing coreners for outliers indentified from the analze error tool
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Re-extraction of the grid corners on the images (after first calibration)
+Window size for corner finder (wintx and winty):
+9
+9
+Window size = 19x19
+[6,7,19,21:24]
+
+Processing image 6...7...19...21...22...23...24...
+done
+
+Aspect ratio optimized (est_aspect_ratio = 1) -> both components of fc are estimated (DEFAULT).
+Principal point optimized (center_optim=1) - (DEFAULT). To reject principal point, set center_optim=0
+Skew not optimized (est_alpha=0) - (DEFAULT)
+Distortion not fully estimated (defined by the variable est_dist):
+     Sixth order distortion not estimated (est_dist(5)=0) - (DEFAULT) .
+
+Main calibration optimization procedure - Number of images: 26
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 975.98981   980.55518 ] +/- [ 6.08275   6.44082 ]
+Principal point:       cc = [ 611.59275   358.13852 ] +/- [ 9.22207   6.65206 ]
+Skew:             alpha_c = [ 0.00000 ] +/- [ 0.00000  ]   => angle of pixel axes = 90.00000 +/- 0.00000 degrees
+Distortion:            kc = [ 0.01167   -0.01542   -0.00351   -0.00182  0.00000 ] +/- [ 0.01740   0.04855   0.00221   0.00328  0.00000 ]
+Pixel error:          err = [ 0.82198   0.59955 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+Recommendation: Some distortion coefficients are found equal to zero (within their uncertainties).
+                To reject them from the optimization set est_dist=[1;0;1;1;0] and run Calibration
+
+
+# Recomputing coreners for all images
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+Re-extraction of the grid corners on the images (after first calibration)
+Window size for corner finder (wintx and winty):
+9
+9
+Window size = 19x19
+
+
+Processing image 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...20...21...22...23...24...25...26...
+done
+
+Aspect ratio optimized (est_aspect_ratio = 1) -> both components of fc are estimated (DEFAULT).
+Principal point optimized (center_optim=1) - (DEFAULT). To reject principal point, set center_optim=0
+Skew not optimized (est_alpha=0) - (DEFAULT)
+Distortion not fully estimated (defined by the variable est_dist):
+     Sixth order distortion not estimated (est_dist(5)=0) - (DEFAULT) .
+
+Main calibration optimization procedure - Number of images: 26
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 976.09240   980.31795 ] +/- [ 3.94654   4.17220 ]
+Principal point:       cc = [ 608.85047   360.68816 ] +/- [ 6.00891   4.29567 ]
+Skew:             alpha_c = [ 0.00000 ] +/- [ 0.00000  ]   => angle of pixel axes = 90.00000 +/- 0.00000 degrees
+Distortion:            kc = [ 0.00579   0.00170   -0.00294   -0.00274  0.00000 ] +/- [ 0.01106   0.03026   0.00142   0.00213  0.00000 ]
+Pixel error:          err = [ 0.43251   0.49773 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+Recommendation: Some distortion coefficients are found equal to zero (within their uncertainties).
+                To reject them from the optimization set est_dist=[1;0;1;1;0] and run Calibration
+
+# Calibration after removing outliers
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+There are currently 26 active images selected for calibration (out of 26):
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25 and 26.
+
+You probably want to suppress images
+[2:3 6 16 19 22]
+
+There is now a total of 20 active images for calibration:
+1, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 20, 21, 23, 24, 25 and 26.
+
+You may now run 'Calibration' to recalibrate based on this new set of images.
+
+Aspect ratio optimized (est_aspect_ratio = 1) -> both components of fc are estimated (DEFAULT).
+Principal point optimized (center_optim=1) - (DEFAULT). To reject principal point, set center_optim=0
+Skew not optimized (est_alpha=0) - (DEFAULT)
+Distortion not fully estimated (defined by the variable est_dist):
+     Sixth order distortion not estimated (est_dist(5)=0) - (DEFAULT) .
+
+Main calibration optimization procedure - Number of images: 20
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...20...21...22...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 974.59861   979.27955 ] +/- [ 4.21810   4.40410 ]
+Principal point:       cc = [ 616.93254   373.18950 ] +/- [ 6.72919   4.90896 ]
+Skew:             alpha_c = [ 0.00000 ] +/- [ 0.00000  ]   => angle of pixel axes = 90.00000 +/- 0.00000 degrees
+Distortion:            kc = [ 0.01514   -0.00377   0.00105   -0.00014  0.00000 ] +/- [ 0.01221   0.03273   0.00175   0.00238  0.00000 ]
+Pixel error:          err = [ 0.37947   0.42167 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+
+# recomputing corners again
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Re-extraction of the grid corners on the images (after first calibration)
+Window size for corner finder (wintx and winty):
+15
+15
+Window size = 31x31
+
+
+Processing image 1...4...5...7...8...9...10...11...12...13...14...15...17...18...20...21...23...24...25...26...
+done
+
+Aspect ratio optimized (est_aspect_ratio = 1) -> both components of fc are estimated (DEFAULT).
+Principal point optimized (center_optim=1) - (DEFAULT). To reject principal point, set center_optim=0
+Skew not optimized (est_alpha=0) - (DEFAULT)
+Distortion not fully estimated (defined by the variable est_dist):
+     Sixth order distortion not estimated (est_dist(5)=0) - (DEFAULT) .
+
+Main calibration optimization procedure - Number of images: 20
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 974.46794   979.08369 ] +/- [ 3.97372   4.14837 ]
+Principal point:       cc = [ 616.97774   372.92849 ] +/- [ 6.35284   4.62496 ]
+Skew:             alpha_c = [ 0.00000 ] +/- [ 0.00000  ]   => angle of pixel axes = 90.00000 +/- 0.00000 degrees
+Distortion:            kc = [ 0.01348   -0.00144   0.00081   -0.00034  0.00000 ] +/- [ 0.01150   0.03084   0.00164   0.00224  0.00000 ]
+Pixel error:          err = [ 0.34274   0.41071 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+Recommendation: Some distortion coefficients are found equal to zero (within their uncertainties).
+                To reject them from the optimization set est_dist=[1;0;0;0;0] and run Calibration
+
+
+# Enabling and siabling skew estimatoin
+
+ est_alpha
+
+est_alpha =
+
+     0
+
+>> est_dist = [1;1;1;1;1]
+
+est_dist =
+
+     1
+     1
+     1
+     1
+     1
+
+>> est_alpha = 1
+
+est_alpha =
+
+     1
+
+
+Aspect ratio optimized (est_aspect_ratio = 1) -> both components of fc are estimated (DEFAULT).
+Principal point optimized (center_optim=1) - (DEFAULT). To reject principal point, set center_optim=0
+Skew optimized (est_alpha=1). To disable skew estimation, set est_alpha=0.
+
+Main calibration optimization procedure - Number of images: 20
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 975.85708   980.50495 ] +/- [ 4.05505   4.22594 ]
+Principal point:       cc = [ 614.93563   373.67806 ] +/- [ 6.43804   4.62686 ]
+Skew:             alpha_c = [ -0.00140 ] +/- [ 0.00079  ]   => angle of pixel axes = 90.08012 +/- 0.04509 degrees
+Distortion:            kc = [ 0.00931   0.03885   0.00129   -0.00131  -0.08933 ] +/- [ 0.02145   0.14222   0.00167   0.00231  0.29039 ]
+Pixel error:          err = [ 0.33404   0.41319 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+Recommendation: Some distortion coefficients are found equal to zero (within their uncertainties).
+                To reject them from the optimization set est_dist=[0;0;1;1;0] and run Calibration
+
+
+Observe that after optimization, the skew coefficient is very close to zero (alpha_c). This leads to an angle between x and y pixel axes very close to 90 degrees (89.976 degrees). This justifies the previous assumption of rectangular pixels (alpha_c = 0). In addition, notice that the uncertainty on the 6th order radial distortion coefficient is very large (the uncertainty is much larger than the absolute value of the coefficient). In this case, it is preferable to disable its estimation. In this case, set the last entry of est_dist to zero:
+
+
+
+>> est_dist(5)= 0
+
+est_dist =
+
+     1
+     1
+     1
+     1
+     0
+
+
+Aspect ratio optimized (est_aspect_ratio = 1) -> both components of fc are estimated (DEFAULT).
+Principal point optimized (center_optim=1) - (DEFAULT). To reject principal point, set center_optim=0
+Skew optimized (est_alpha=1). To disable skew estimation, set est_alpha=0.
+Distortion not fully estimated (defined by the variable est_dist):
+     Sixth order distortion not estimated (est_dist(5)=0) - (DEFAULT) .
+
+Main calibration optimization procedure - Number of images: 20
+Gradient descent iterations: 1...2...3...4...5...6...7...8...9...10...11...12...13...14...15...16...17...18...19...done
+Estimation of uncertainties...done
+
+
+Calibration results after optimization (with uncertainties):
+
+Focal Length:          fc = [ 975.67762   980.32442 ] +/- [ 4.01158   4.18425 ]
+Principal point:       cc = [ 614.92103   373.68816 ] +/- [ 6.43647   4.62420 ]
+Skew:             alpha_c = [ -0.00139 ] +/- [ 0.00079  ]   => angle of pixel axes = 90.07972 +/- 0.04505 degrees
+Distortion:            kc = [ 0.01491   -0.00391   0.00133   -0.00133  -0.00000 ] +/- [ 0.01137   0.03009   0.00166   0.00231  0.00000 ]
+Pixel error:          err = [ 0.33413   0.41325 ]
+
+Note: The numerical errors are approximately three times the standard deviations (for reference).
+
+
+Recommendation: Some distortion coefficients are found equal to zero (within their uncertainties).
+                To reject them from the optimization set est_dist=[1;0;1;1;0] and run Calibration
+

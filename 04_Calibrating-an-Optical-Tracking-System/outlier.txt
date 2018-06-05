@@ -1,0 +1,132 @@
+Selected image: 6
+Selected point index: 36
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,3)
+Image coordinates (in pixel): (683.95,488.14)
+Pixel error = (1.14487,2.56223)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 6
+Selected point index: 36
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,3)
+Image coordinates (in pixel): (683.95,488.14)
+Pixel error = (1.14487,2.56223)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 23
+Selected point index: 54
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,0)
+Image coordinates (in pixel): (656.68,489.01)
+Pixel error = (-4.31071,-1.75872)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 23
+Selected point index: 54
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,0)
+Image coordinates (in pixel): (656.68,489.01)
+Pixel error = (-4.31071,-1.75872)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 23
+Selected point index: 54
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,0)
+Image coordinates (in pixel): (656.68,489.01)
+Pixel error = (-4.31071,-1.75872)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 7
+Selected point index: 42
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,2)
+Image coordinates (in pixel): (411.13,488.85)
+Pixel error = (-2.23108,2.59161)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 7
+Selected point index: 52
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(3,0)
+Image coordinates (in pixel): (213.23,298.41)
+Pixel error = (1.06237,-3.49346)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 7
+Selected point index: 42
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,2)
+Image coordinates (in pixel): (411.13,488.85)
+Pixel error = (-2.23108,2.59161)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 6
+Selected point index: 36
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,3)
+Image coordinates (in pixel): (683.95,488.14)
+Pixel error = (1.14487,2.56223)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 19
+Selected point index: 31
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(0,3)
+Image coordinates (in pixel): (647.22,125.87)
+Pixel error = (3.14823,-0.38086)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 6
+Selected point index: 36
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,3)
+Image coordinates (in pixel): (683.95,488.14)
+Pixel error = (1.14487,2.56223)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 6
+Selected point index: 36
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,3)
+Image coordinates (in pixel): (683.95,488.14)
+Pixel error = (1.14487,2.56223)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 7
+Selected point index: 42
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,2)
+Image coordinates (in pixel): (411.13,488.85)
+Pixel error = (-2.23108,2.59161)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 23
+Selected point index: 42
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,2)
+Image coordinates (in pixel): (758.90,419.39)
+Pixel error = (3.10370,-0.20615)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 23
+Selected point index: 35
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(4,3)
+Image coordinates (in pixel): (742.52,356.43)
+Pixel error = (-4.51691,-0.99914)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 22
+Selected point index: 30
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,4)
+Image coordinates (in pixel): (706.95,407.30)
+Pixel error = (-1.78523,-2.57485)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 24
+Selected point index: 54
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,0)
+Image coordinates (in pixel): (762.18,523.03)
+Pixel error = (-2.51434,-2.48307)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 23
+Selected point index: 42
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,2)
+Image coordinates (in pixel): (758.90,419.39)
+Pixel error = (3.10370,-0.20615)
+Window size: (wintx,winty) = (5,5)
+
+Selected image: 21
+Selected point index: 6
+Pattern coordinates (in units of (dX,dY)): (X,Y)=(5,8)
+Image coordinates (in pixel): (1043.61,331.08)
+Pixel error = (-3.10848,-1.21529)
+Window size: (wintx,winty) = (5,5)
