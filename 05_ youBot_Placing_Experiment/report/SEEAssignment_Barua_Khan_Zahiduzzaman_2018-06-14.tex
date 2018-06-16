@@ -1,0 +1,111 @@
+				\documentclass[10pt,a4paper]{article}
+				\usepackage[english]{babel}
+				\usepackage[utf8]{inputenc}
+				\usepackage{fancyhdr}
+				\usepackage{hyperref}
+				\usepackage{graphicx}
+				\usepackage{subcaption}
+				\usepackage{caption}
+				\usepackage{cite}
+				\usepackage{booktabs}
+				\usepackage{wrapfig}
+				\usepackage{float}
+				\usepackage{amsmath}
+				\usepackage{xcolor}
+				\usepackage{listings}
+				\lstset{
+					basicstyle=\ttfamily,
+					columns=fullflexible,
+					frame=single,
+					breaklines=true,
+					%postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+				}
+				
+				\restylefloat{table}
+			
+				\pagestyle{fancy}
+				\fancyhf{}
+				\rhead{\today}
+				\lhead{Assignment 05}
+				\rfoot{Page \thepage}
+			
+				\begin{document}
+				\begin{titlepage}
+				\centering
+			
+					{\scshape\LARGE Scientific Experimentation and Evaluation\par}
+			
+					{\scshape\Large Assignment: 05\par}
+			
+					\vfill
+			
+					\vfill
+					{\Large\itshape Anees Khan (9030423)
+						\\Debaraj Barua (9030412)\\
+						Md Zahiduzzaman (9030432)
+						\par}
+					\vfill
+			
+					{\large 14-June-2018\par}
+				\end{titlepage}
+				\tableofcontents
+				\listoffigures	
+				\listoftables
+				\newpage
+				\section{Relevant Aspects of Experiment}
+				\subsection{Apparatus}
+					\subsubsection{Hardware}
+						\begin{itemize}
+							\item KUKA youBot arm.
+							\item Objects of three different sizes and weights, with ArUco markers attached to the top.
+							\item Camera (Microsoft LifeCam).
+							\item Two computers, one to run the robot and other for data gathering from the camera.
+							\item A fixed container or marker on the table to ensure that the initial object position is kept constant.
+						\end{itemize}
+					\subsubsection{Software and Libraries used}
+						\begin{itemize}
+							\item KUKA youBot drivers.
+							\item Control scripts for the arm to pick and move the objects in one of the three predefined placing poses.
+							\item Marker pose subscribed script, to gather pose of the object.
+							\item \textbf{LibreOffice Calc} for data management.
+							\item \textbf{Python} for data visualization and calculations
+							\item \textcolor{red}{Python libraries}:
+							%						\begin{itemize}
+							%							\item pandas
+							%							\item numpy
+							%							\item matplotlib
+							%							\item seaborn
+							%							\item scipy.stats
+							%						\end{itemize}
+							\end{itemize}		
+											
+				\subsection{Procedure}	
+					\begin{itemize}
+						\item First we run the script to get the arm in the pre-grasp position.
+						\item We then place the object in the container, keeping the marker's orientation constant throughout the experiment.\\
+						\item We then run the script to move the arm in one of the three pre-defined positions; and repeat this twenty times for each weight and pose combination. Thus, giving us 180 readings of pose coming from three different objects in three different orientations.
+						\item Once the object is placed and the arm moves back to a stationary position, we run the subscriber script to collect pose readings of 50 frames from the camera. This is repeated after each motion.
+					\end{itemize}
+				\subsection{Expected Problems and Performance}
+					\begin{itemize}
+						\item The picking position of the arm might differ from the ground truth, because of vibrations, motion in the table and a variety of other physical conditions.
+						\item The placement of the object in the container might not always be aligned properly.
+						\item The marker on top of the object might move during movement and thus will lead to improper pose data.
+						\item After placing the object, the gripper might touch it while moving away, which will introduce distortions in data.
+						\item The light might not always be uniform, which might also cause some distortions in observation.						
+					\end{itemize}
+					
+				\section{\textcolor{red}{Observations and Data}}
+					 \subsection{Visualization}
+						 \subsubsection{Data Visualization}
+							  \textcolor{red}{Histograms of raw data}
+	    				 \subsubsection{Outlier Detection and Removal}
+		    				 \textcolor{red}{How we remove outliers}
+						 \subsubsection{Pose Visualization}
+							 \textcolor{red}{Plot Pose for data after removing outliers}				
+					
+%				\section{\textcolor{blue}{Results}}
+%				\subsection{Final Position \& Accuracy }
+%				  \textcolor{red}{Display in a tabular format}
+%				\subsection{Compare Data with Gaussian}
+				\end{document}
