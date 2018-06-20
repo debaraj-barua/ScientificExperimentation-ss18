@@ -69,14 +69,14 @@
 							\item Marker pose subscribed script, to gather pose of the object.
 							\item \textbf{LibreOffice Calc} for data management.
 							\item \textbf{Python} for data visualization and calculations
-							\item \textcolor{red}{Python libraries}:
-							%						\begin{itemize}
-							%							\item pandas
-							%							\item numpy
-							%							\item matplotlib
-							%							\item seaborn
-							%							\item scipy.stats
-							%						\end{itemize}
+							\item Python libraries:
+							\begin{itemize}
+								\item pandas
+								\item numpy
+								\item matplotlib
+								\item seaborn
+								\item scipy.stats
+							\end{itemize}
 							\end{itemize}		
 											
 				\subsection{Procedure}	
@@ -95,14 +95,139 @@
 						\item The light might not always be uniform, which might also cause some distortions in observation.						
 					\end{itemize}
 					
-				\section{\textcolor{red}{Observations and Data}}
+				\section{Observations and Data}
 					 \subsection{Visualization}
 						 \subsubsection{Data Visualization}
-							  \textcolor{red}{Histograms of raw data}
+						\begin{itemize}
+							\item The raw data with fifty reading for each run has been filtered and saved as an average. This data is used for further visualization. 
+							\item The first visualization shows the pose distribution of large, medium and small objects in three directions including the initial and expected pose. 
+							\item The upper right hand corner is the left run plot and the lower left hand corner is right run plot.
+							\begin{figure}[h]
+								\centering
+								\includegraphics[width=1.0\linewidth]{img/pose_all_all.png}
+								\caption{poses for all objects in straight, left and right direction}
+								\label{fig:poses for all objects in straight, left and right direction}
+							\end{figure}
+					\end{itemize}			
 	    				 \subsubsection{Outlier Detection and Removal}
-		    				 \textcolor{red}{How we remove outliers}
+		    				 We filtered the noisy raw data by removing all records with x, y or theta value outside the range of $\mu_x \pm 2\sigma_x$, $\mu_y \pm 2\sigma_y$, $\mu_\theta \pm 2\sigma_\theta$ respectively. We used the filtered raw data to calculate mean for each experimental trial. Total number of outlier is 495 and outlier per experimental run is 2.75
 						 \subsubsection{Pose Visualization}
-							 \textcolor{red}{Plot Pose for data after removing outliers}				
+							\begin{itemize}
+								\item The first section shows the pose plots of small, medium and large objects in straight path. 
+								\item It shows the initial pose, the expected(ground truth) and observed pose(twenty points).  
+								\item The same process is repeated for left followed by right run.
+								
+								\begin{figure}[H]
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_small_straight.png}
+										\caption{object: small, direction: straight}
+										\label{fig:object: small, direction: straight}
+									\end{subfigure}%
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_medium_straight.png}
+										\caption{object: medium, direction: straight}
+										\label{fig:object: medium, direction: straight}
+									\end{subfigure}
+									
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_large_straight.png}
+										\caption{object: large, direction: straight}
+										\label{fig:object: large, direction: straight}
+									\end{subfigure}%
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_all_straight.png}
+										\caption{object: all, direction: straight}
+										\label{fig:object: all, direction: straight}
+									\end{subfigure}
+									
+									\caption{pose in straight direction}
+									\label{fig:pose in straight direction}
+								\end{figure}
+								
+								\begin{figure}[H]
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_small_left.png}
+										\caption{object: small, direction: left}
+										\label{fig:object: small, direction: left}
+									\end{subfigure}%
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_medium_left.png}
+										\caption{object: medium, direction: left}
+										\label{fig:object: medium, direction: left}
+									\end{subfigure}
+									
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_large_left.png}
+										\caption{object: large, direction: left}
+										\label{fig:object: large, direction: left}
+									\end{subfigure}%
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_all_left.png}
+										\caption{object: all, direction: left}
+										\label{fig:object: all, direction: left}
+									\end{subfigure}
+									
+									\caption{pose in left direction}
+									\label{fig:pose in left direction}
+								\end{figure}
+								
+								\begin{figure}[H]
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_small_right.png}
+										\caption{object: small, direction: right}
+										\label{fig:object: small, direction: right}
+									\end{subfigure}%
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_medium_right.png}
+										\caption{object: medium, direction: right}
+										\label{fig:object: medium, direction: right}
+									\end{subfigure}
+									
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_large_right.png}
+										\caption{object: large, direction: right}
+										\label{fig:object: large, direction: right}
+									\end{subfigure}%
+									\begin{subfigure}{0.5\textwidth}
+										\centering
+										\includegraphics[width=0.8\linewidth]{img/pose_all_right.png}
+										\caption{object: all, direction: right}
+										\label{fig:object: all, direction: right}
+									\end{subfigure}
+									
+									\caption{pose in right direction}
+									\label{fig:pose in right direction}
+								\end{figure}
+
+							\end{itemize}	
+					\subsubsection{Numerical Results}
+							\begin{itemize}
+							\item By taking mean of all the all the points for straight, left and right gave us the following numbers. 
+							\item Straight: \\
+									X-axis: -87.54 \\
+									Y-axis: -71.77 \\
+									Angle: 1.42	
+							\item Left:\\
+									X-axis: -45.27\\
+									Y-axis: -45.10 \\
+									Angle: 0.98
+							\item Right:\\
+									X-axis: -113.04\\
+									Y-axis: -71.08 \\
+									Angle: 1.76
+
+							\end{itemize}		
 					
 %				\section{\textcolor{blue}{Results}}
 %				\subsection{Final Position \& Accuracy }
