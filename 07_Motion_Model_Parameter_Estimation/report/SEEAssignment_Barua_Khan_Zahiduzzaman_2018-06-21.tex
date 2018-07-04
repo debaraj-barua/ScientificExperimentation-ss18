@@ -303,7 +303,23 @@
 						\item The number of poses for which the hypothesis was not true was found to be k = 17.
 					\end{itemize}
 					
-					Hence, $error_s (h) = \frac{17}{60} = 0.28 $
+					Hence, $error_s (h) = \frac{11}{60} = 0.18 $
+					
+					and $error_d = \pm 1.96 \times \sqrt{\frac{error_s (h) \times (1-error_s (h))}{n}} = \pm0.09$\\
+					
+					Hence it can be concluded that above hypothesis is true. \\
+					
+					\textbf{Hypothesis : Using single camera measurement does not affect the final object pose measurement.}
+					
+					\begin{itemize}
+						\item We randomly picked 20 poses from the raw data for each motion (left, straight, right) for big, medium and small objects. Therefore the total number of poses $n$ is 60.
+						
+						\item We consider (2.0 cm; 2.0 cm; 0:2 rad) as acceptable distance for comparison.
+						
+						\item The number of poses for which the hypothesis was not true was found to be k = 16.
+					\end{itemize}
+					
+					Hence, $error_s (h) = \frac{16}{60} = 0.26 $
 					
 					and $error_d = \pm 1.96 \times \sqrt{\frac{error_s (h) \times (1-error_s (h))}{n}} = \pm0.11$\\
 					
